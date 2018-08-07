@@ -8,6 +8,11 @@ let bot = new Discord.Client();
 const APIKEY = "AIzaSyA9BBe0ud_2h_5q9SVBvrXfRGtxwIX5WaM"; // replace me
 const { YTSearcher } = require('ytsearcher');
 const ytsearcher = new YTSearcher(APIKEY);
+const DBL = require("dblapi.js");
+const dbl = new DBL(process.env.DBL, bot);
+dbl.on("posted", () => {
+    console.log(`Posted ${bot.guilds.size} servers to the DBL api!`)
+  });
 
 let queue = {};
 
