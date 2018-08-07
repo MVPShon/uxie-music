@@ -1,2 +1,2 @@
-# Evileye-Music
-Evileye's music support.
+# Uxie-Music
+Uxie's music support.
