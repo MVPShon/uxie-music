@@ -10,9 +10,14 @@ const { YTSearcher } = require('ytsearcher');
 const ytsearcher = new YTSearcher(APIKEY);
 const DBL = require("dblapi.js");
 const dbl = new DBL(process.env.DBL, bot);
-dbl.on("posted", () => {
-    console.log(`Posted ${bot.guilds.size} servers to the DBL api!`)
-  });
+
+dbl.on('posted', () => {
+  console.log('Server count posted!');
+})
+
+dbl.on('error', e => {
+ console.log(`Oops! ${e}`);
+})
 
 let queue = {};
 
