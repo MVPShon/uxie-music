@@ -18,7 +18,11 @@ dbl.on('posted', () => {
 dbl.on('error', e => {
  console.log(`Oops! ${e}`);
 })
-
+bot.on('ready', () => {
+    setInterval(() => {
+        dbl.postStats(bot.guilds.size, bot.shards.Id, bot.shards.total);
+    }, 10000);
+});
 let queue = {};
 
 const commands =  {
